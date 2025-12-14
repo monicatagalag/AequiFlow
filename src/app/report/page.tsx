@@ -112,36 +112,36 @@ export default function ReportPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4">
+      <div className="min-h-screen bg-white flex items-center justify-center px-4">
         <Card className="max-w-md w-full text-center">
           <CardContent className="pt-8 pb-8">
-            <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-8 h-8 text-success" />
+            <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle2 className="w-8 h-8 text-emerald-600" />
             </div>
-            <h2 className="font-heading text-2xl font-bold text-slate-100 mb-3">
+            <h2 className="font-heading text-2xl font-bold text-slate-900 mb-3">
               Report Submitted
             </h2>
-            <p className="text-slate-400 mb-6">
+            <p className="text-slate-600 mb-6">
               Thank you for helping improve public infrastructure. Your report
               has been submitted anonymously and will be reviewed by our team.
             </p>
 
             {/* Privacy Reassurance */}
-            <div className="bg-surface-elevated rounded-lg p-4 mb-6 border border-border">
-              <div className="flex items-center gap-2 text-success mb-2">
+            <div className="bg-emerald-50 rounded-lg p-4 mb-6 border border-emerald-200">
+              <div className="flex items-center gap-2 text-emerald-700 mb-2">
                 <Shield className="w-4 h-4" />
                 <span className="text-sm font-medium">Privacy Protected</span>
               </div>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-600">
                 No personal data was collected. Your report is encrypted and
                 completely anonymous.
               </p>
             </div>
 
             {/* Report ID */}
-            <div className="bg-surface rounded-lg p-3 mb-6">
+            <div className="bg-slate-100 rounded-lg p-3 mb-6">
               <p className="text-xs text-slate-500 mb-1">Reference Number</p>
-              <p className="font-mono text-sm text-slate-100">
+              <p className="font-mono text-sm text-slate-900">
                 RPT-{Date.now().toString(36).toUpperCase()}
               </p>
             </div>
@@ -163,20 +163,20 @@ export default function ReportPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-surface/50 border-b border-border/50">
+      <section className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-2xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-warning/10 flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-warning" />
+              <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+                <AlertTriangle className="w-5 h-5 text-amber-600" />
               </div>
-              <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-100">
+              <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-900">
                 Report an Issue
               </h1>
             </div>
-            <p className="text-slate-400">
+            <p className="text-slate-600">
               Help improve public infrastructure by reporting issues you observe.
               All reports are anonymous and protected.
             </p>
@@ -185,17 +185,17 @@ export default function ReportPage() {
       </section>
 
       {/* Privacy Banner */}
-      <section className="bg-success/5 border-b border-success/20">
+      <section className="bg-emerald-50 border-b border-emerald-200">
         <div className="container mx-auto px-4 py-4">
           <div className="max-w-2xl mx-auto flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0">
-              <Shield className="w-5 h-5 text-success" />
+            <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+              <Shield className="w-5 h-5 text-emerald-600" />
             </div>
             <div>
-              <p className="text-sm text-success font-medium">
+              <p className="text-sm text-emerald-700 font-medium">
                 Your Privacy is Protected
               </p>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-600">
                 No personal data is collected. Reports are encrypted and
                 anonymized.
               </p>
@@ -205,16 +205,16 @@ export default function ReportPage() {
       </section>
 
       {/* Progress */}
-      <section className="border-b border-border/50">
+      <section className="border-b border-slate-200">
         <div className="container mx-auto px-4 py-4">
           <div className="max-w-2xl mx-auto">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-slate-400">
+              <span className="text-sm text-slate-500">
                 Step {step} of {totalSteps}
               </span>
-              <span className="text-sm text-slate-400">{Math.round(progress)}%</span>
+              <span className="text-sm text-slate-500">{Math.round(progress)}%</span>
             </div>
-            <Progress value={progress} indicatorClassName="bg-warning" />
+            <Progress value={progress} indicatorClassName="bg-amber-500" />
           </div>
         </div>
       </section>
@@ -240,30 +240,30 @@ export default function ReportPage() {
                           onClick={() => setIssueType(type.type)}
                           className={`flex items-start gap-3 p-4 rounded-lg border transition-all text-left ${
                             isSelected
-                              ? "border-warning bg-warning/10"
-                              : "border-border hover:border-warning/50 bg-surface"
+                              ? "border-amber-500 bg-amber-50"
+                              : "border-slate-200 hover:border-amber-300 bg-white"
                           }`}
                         >
                           <div
                             className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                              isSelected ? "bg-warning/20" : "bg-surface-elevated"
+                              isSelected ? "bg-amber-100" : "bg-slate-100"
                             }`}
                           >
                             <Icon
                               className={`w-5 h-5 ${
-                                isSelected ? "text-warning" : "text-slate-400"
+                                isSelected ? "text-amber-600" : "text-slate-500"
                               }`}
                             />
                           </div>
                           <div>
                             <p
                               className={`font-medium ${
-                                isSelected ? "text-warning" : "text-slate-100"
+                                isSelected ? "text-amber-700" : "text-slate-900"
                               }`}
                             >
                               {type.label}
                             </p>
-                            <p className="text-xs text-slate-400 mt-0.5">
+                            <p className="text-xs text-slate-500 mt-0.5">
                               {type.description}
                             </p>
                           </div>
@@ -280,12 +280,12 @@ export default function ReportPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Camera className="w-5 h-5 text-primary" />
+                    <Camera className="w-5 h-5 text-cyan-600" />
                     Add Photo Evidence (Optional)
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-slate-400 mb-4">
+                  <p className="text-sm text-slate-600 mb-4">
                     Photos help verify reports. Metadata like GPS and timestamp
                     are automatically stripped to protect your privacy.
                   </p>
@@ -293,13 +293,13 @@ export default function ReportPage() {
                   {/* Upload Area */}
                   <div
                     onClick={handlePhotoUpload}
-                    className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary/50 transition-colors mb-4"
+                    className="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center cursor-pointer hover:border-cyan-400 transition-colors mb-4"
                   >
-                    <Upload className="w-10 h-10 text-slate-500 mx-auto mb-3" />
-                    <p className="text-sm text-slate-400">
+                    <Upload className="w-10 h-10 text-slate-400 mx-auto mb-3" />
+                    <p className="text-sm text-slate-600">
                       Click to upload photos
                     </p>
-                    <p className="text-xs text-slate-500 mt-1">
+                    <p className="text-xs text-slate-400 mt-1">
                       PNG, JPG up to 10MB
                     </p>
                   </div>
@@ -310,21 +310,21 @@ export default function ReportPage() {
                       {photos.map((photo, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between p-3 bg-surface-elevated rounded-lg border border-border"
+                          className="flex items-center justify-between p-3 bg-slate-50 rounded-lg border border-slate-200"
                         >
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center">
-                              <Camera className="w-5 h-5 text-slate-400" />
+                            <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
+                              <Camera className="w-5 h-5 text-slate-500" />
                             </div>
-                            <span className="text-sm text-slate-100">{photo}</span>
+                            <span className="text-sm text-slate-900">{photo}</span>
                           </div>
                           <button
                             onClick={() =>
                               setPhotos(photos.filter((_, i) => i !== index))
                             }
-                            className="p-1 hover:bg-surface rounded"
+                            className="p-1 hover:bg-slate-200 rounded"
                           >
-                            <X className="w-4 h-4 text-slate-400" />
+                            <X className="w-4 h-4 text-slate-500" />
                           </button>
                         </div>
                       ))}
@@ -348,29 +348,29 @@ export default function ReportPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-primary" />
+                    <MapPin className="w-5 h-5 text-cyan-600" />
                     Confirm Location
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-slate-400 mb-4">
+                  <p className="text-sm text-slate-600 mb-4">
                     We&apos;ve auto-detected your location. You can adjust it if needed.
                   </p>
 
                   {/* Auto-detected Location */}
-                  <div className="bg-surface-elevated rounded-lg p-4 border border-border mb-4">
-                    <div className="flex items-center gap-2 text-success mb-2">
+                  <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200 mb-4">
+                    <div className="flex items-center gap-2 text-emerald-700 mb-2">
                       <MapPin className="w-4 h-4" />
                       <span className="text-sm font-medium">
                         {location.includes("Detecting") ? "Detecting..." : "Location Detected"}
                       </span>
                     </div>
-                    <p className="text-slate-100">{location}</p>
+                    <p className="text-slate-900">{location}</p>
                   </div>
 
                   {/* Manual Input */}
                   <div>
-                    <label className="text-sm text-slate-400 mb-2 block">
+                    <label className="text-sm text-slate-600 mb-2 block">
                       Or enter location manually:
                     </label>
                     <Input
@@ -397,12 +397,12 @@ export default function ReportPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-primary" />
+                    <FileText className="w-5 h-5 text-cyan-600" />
                     Describe the Issue
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-slate-400 mb-4">
+                  <p className="text-sm text-slate-600 mb-4">
                     Provide details about what you observed. Be specific but
                     avoid including personal information.
                   </p>
@@ -424,37 +424,37 @@ export default function ReportPage() {
                   </div>
 
                   {/* Summary */}
-                  <div className="mt-6 pt-6 border-t border-border">
-                    <h4 className="font-medium text-slate-100 mb-3">
+                  <div className="mt-6 pt-6 border-t border-slate-200">
+                    <h4 className="font-medium text-slate-900 mb-3">
                       Report Summary
                     </h4>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Issue Type:</span>
-                        <span className="text-slate-100">
+                        <span className="text-slate-500">Issue Type:</span>
+                        <span className="text-slate-900">
                           {issueTypes.find((t) => t.type === issueType)?.label}
                         </span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Location:</span>
-                        <span className="text-slate-100 text-right max-w-[200px] truncate">
+                        <span className="text-slate-500">Location:</span>
+                        <span className="text-slate-900 text-right max-w-[200px] truncate">
                           {location}
                         </span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Photos:</span>
-                        <span className="text-slate-100">{photos.length} attached</span>
+                        <span className="text-slate-500">Photos:</span>
+                        <span className="text-slate-900">{photos.length} attached</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Final Privacy Reassurance */}
-                  <div className="mt-6 bg-success/5 border border-success/20 rounded-lg p-4">
-                    <div className="flex items-center gap-2 text-success mb-2">
+                  <div className="mt-6 bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <div className="flex items-center gap-2 text-emerald-700 mb-2">
                       <Shield className="w-4 h-4" />
                       <span className="text-sm font-medium">Before you submit</span>
                     </div>
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-600">
                       No personal data is collected. Reports are encrypted and
                       anonymized. Your identity cannot be traced from this report.
                     </p>
@@ -499,4 +499,3 @@ export default function ReportPage() {
     </div>
   );
 }
-

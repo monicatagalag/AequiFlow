@@ -30,19 +30,19 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-xl">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/aequiflow-logo.jpg"
+              src="/aequiflowlogo.png"
               alt="AequiFlow Logo"
               width={40}
               height={40}
               className="rounded-lg"
             />
-            <span className="font-heading font-bold text-xl text-white">
+            <span className="font-heading font-bold text-xl text-slate-900">
               AequiFlow
             </span>
           </Link>
@@ -59,8 +59,8 @@ export function Navbar() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                     isActive
-                      ? "bg-primary/10 text-primary"
-                      : "text-slate-400 hover:text-slate-100 hover:bg-surface-elevated"
+                      ? "bg-cyan-50 text-cyan-700"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                   )}
                 >
                   <Icon className="w-4 h-4" />
@@ -73,7 +73,7 @@ export function Navbar() {
           {/* CTA Button - Desktop */}
           <div className="hidden md:flex items-center gap-3">
             <Link href="/report">
-              <Button variant="outline" size="sm">
+              <Button size="sm">
                 <AlertTriangle className="w-4 h-4" />
                 Report Issue
               </Button>
@@ -82,20 +82,20 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-surface-elevated transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5 text-slate-300" />
+              <X className="w-5 h-5 text-slate-600" />
             ) : (
-              <Menu className="w-5 h-5 text-slate-300" />
+              <Menu className="w-5 h-5 text-slate-600" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border/50">
+          <nav className="md:hidden py-4 border-t border-slate-200">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => {
                 const Icon = link.icon;
@@ -108,8 +108,8 @@ export function Navbar() {
                     className={cn(
                       "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all",
                       isActive
-                        ? "bg-primary/10 text-primary"
-                        : "text-slate-400 hover:text-slate-100 hover:bg-surface-elevated"
+                        ? "bg-cyan-50 text-cyan-700"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                     )}
                   >
                     <Icon className="w-4 h-4" />
@@ -117,9 +117,9 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-4 mt-2 border-t border-border/50">
+              <div className="pt-4 mt-2 border-t border-slate-200">
                 <Link href="/report" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full" variant="outline">
+                  <Button className="w-full">
                     <AlertTriangle className="w-4 h-4" />
                     Report Issue
                   </Button>
@@ -132,4 +132,3 @@ export function Navbar() {
     </header>
   );
 }
-

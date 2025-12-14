@@ -90,21 +90,21 @@ export default function DashboardPage() {
   );
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-surface/50 border-b border-border/50">
+      <section className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <LayoutDashboard className="w-5 h-5 text-primary" />
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center">
+                  <LayoutDashboard className="w-5 h-5 text-cyan-600" />
                 </div>
-                <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-100">
+                <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-900">
                   LGU Dashboard
                 </h1>
               </div>
-              <p className="text-slate-400">
+              <p className="text-slate-600">
                 Overview of public infrastructure projects, reports, and community
                 validation metrics.
               </p>
@@ -125,14 +125,14 @@ export default function DashboardPage() {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Building2 className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center">
+                    <Building2 className="w-5 h-5 text-cyan-600" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold text-slate-100">
+                    <p className="text-2xl font-heading font-bold text-slate-900">
                       {dashboardStats.totalProjects}
                     </p>
-                    <p className="text-xs text-slate-400">Total Projects</p>
+                    <p className="text-xs text-slate-600">Total Projects</p>
                   </div>
                 </div>
               </CardContent>
@@ -141,14 +141,14 @@ export default function DashboardPage() {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center">
-                    <CheckCircle2 className="w-5 h-5 text-success" />
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold text-success">
+                    <p className="text-2xl font-heading font-bold text-emerald-600">
                       {dashboardStats.completedProjects}
                     </p>
-                    <p className="text-xs text-slate-400">Completed</p>
+                    <p className="text-xs text-slate-600">Completed</p>
                   </div>
                 </div>
               </CardContent>
@@ -157,14 +157,14 @@ export default function DashboardPage() {
             <Card>
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-warning/10 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-warning" />
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold text-warning">
+                    <p className="text-2xl font-heading font-bold text-amber-600">
                       {dashboardStats.delayedProjects}
                     </p>
-                    <p className="text-xs text-slate-400">Delayed</p>
+                    <p className="text-xs text-slate-600">Delayed</p>
                   </div>
                 </div>
               </CardContent>
@@ -177,10 +177,10 @@ export default function DashboardPage() {
                     <AlertTriangle className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-2xl font-heading font-bold text-slate-100">
+                    <p className="text-2xl font-heading font-bold text-slate-900">
                       {dashboardStats.pendingReports}
                     </p>
-                    <p className="text-xs text-slate-400">Pending Reports</p>
+                    <p className="text-xs text-slate-600">Pending Reports</p>
                   </div>
                 </div>
               </CardContent>
@@ -195,31 +195,31 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Banknote className="w-5 h-5 text-primary" />
+                    <Banknote className="w-5 h-5 text-cyan-600" />
                     Budget Overview
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div>
-                      <p className="text-sm text-slate-400 mb-1">Total Budget</p>
-                      <p className="text-2xl font-heading font-bold text-slate-100">
+                      <p className="text-sm text-slate-600 mb-1">Total Budget</p>
+                      <p className="text-2xl font-heading font-bold text-slate-900">
                         {formatCurrency(dashboardStats.totalBudget)}
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm text-slate-400 mb-1">Disbursed</p>
-                      <p className="text-2xl font-heading font-bold text-success">
+                      <p className="text-sm text-slate-600 mb-1">Disbursed</p>
+                      <p className="text-2xl font-heading font-bold text-emerald-600">
                         {formatCurrency(dashboardStats.totalDisbursed)}
                       </p>
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         Disbursement Progress
                       </span>
-                      <span className="text-sm font-medium text-slate-100">
+                      <span className="text-sm font-medium text-slate-900">
                         {Math.round(
                           (dashboardStats.totalDisbursed /
                             dashboardStats.totalBudget) *
@@ -245,7 +245,7 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
                   <CardTitle className="flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-primary" />
+                    <FileText className="w-5 h-5 text-cyan-600" />
                     Recent Reports
                   </CardTitle>
                   <Badge variant="warning">{activeReports.length} active</Badge>
@@ -255,14 +255,14 @@ export default function DashboardPage() {
                     {reports.slice(0, 5).map((report) => (
                       <div
                         key={report.id}
-                        className="flex items-start justify-between p-3 rounded-lg bg-surface-elevated border border-border hover:border-primary/30 transition-colors"
+                        className="flex items-start justify-between p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-cyan-300 transition-colors"
                       >
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <ReportTypeBadge type={report.type} />
                             <ReportStatusBadge status={report.status} />
                           </div>
-                          <p className="text-sm text-slate-100 line-clamp-1">
+                          <p className="text-sm text-slate-900 line-clamp-1">
                             {report.description}
                           </p>
                           <div className="flex items-center gap-3 mt-2 text-xs text-slate-500">
@@ -293,7 +293,7 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
                   <CardTitle className="flex items-center gap-2">
-                    <AlertTriangle className="w-5 h-5 text-warning" />
+                    <AlertTriangle className="w-5 h-5 text-amber-600" />
                     Projects Requiring Attention
                   </CardTitle>
                   <Badge variant="warning">
@@ -308,7 +308,7 @@ export default function DashboardPage() {
                         href={`/projects/${project.id}`}
                         className="block"
                       >
-                        <div className="flex items-center justify-between p-3 rounded-lg bg-surface-elevated border border-border hover:border-warning/30 transition-colors">
+                        <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-amber-300 transition-colors">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1">
                               <Badge
@@ -327,7 +327,7 @@ export default function DashboardPage() {
                                 </Badge>
                               )}
                             </div>
-                            <p className="text-sm text-slate-100 font-medium line-clamp-1">
+                            <p className="text-sm text-slate-900 font-medium line-clamp-1">
                               {project.name}
                             </p>
                             <p className="text-xs text-slate-500 mt-1">
@@ -335,7 +335,7 @@ export default function DashboardPage() {
                             </p>
                           </div>
                           <div className="text-right ml-4">
-                            <p className="text-sm font-medium text-slate-100">
+                            <p className="text-sm font-medium text-slate-900">
                               {project.progress}%
                             </p>
                             <p className="text-xs text-slate-500">progress</p>
@@ -354,16 +354,16 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-success" />
+                    <Shield className="w-5 h-5 text-emerald-600" />
                     Validation Confidence
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-center mb-4">
-                    <div className="text-4xl font-heading font-bold text-success">
+                    <div className="text-4xl font-heading font-bold text-emerald-600">
                       {dashboardStats.averageValidation}%
                     </div>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-600">
                       Average across all projects
                     </p>
                   </div>
@@ -374,10 +374,10 @@ export default function DashboardPage() {
                   />
 
                   {/* Breakdown */}
-                  <div className="space-y-3 pt-4 border-t border-border">
+                  <div className="space-y-3 pt-4 border-t border-slate-200">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-400">High confidence (&gt;80%)</span>
-                      <span className="font-medium text-slate-100">
+                      <span className="text-slate-600">High confidence (&gt;80%)</span>
+                      <span className="font-medium text-slate-900">
                         {
                           projects.filter((p) => p.validationScore > 80).length
                         }{" "}
@@ -385,10 +385,10 @@ export default function DashboardPage() {
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-400">
+                      <span className="text-slate-600">
                         Medium confidence (60-80%)
                       </span>
-                      <span className="font-medium text-slate-100">
+                      <span className="font-medium text-slate-900">
                         {
                           projects.filter(
                             (p) =>
@@ -399,10 +399,10 @@ export default function DashboardPage() {
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-400">
+                      <span className="text-slate-600">
                         Low confidence (&lt;60%)
                       </span>
-                      <span className="font-medium text-warning">
+                      <span className="font-medium text-amber-600">
                         {
                           projects.filter((p) => p.validationScore < 60).length
                         }{" "}
@@ -417,37 +417,37 @@ export default function DashboardPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5 text-primary" />
+                    <BarChart3 className="w-5 h-5 text-cyan-600" />
                     Quick Stats
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         Total Reports Filed
                       </span>
-                      <span className="font-medium text-slate-100">
+                      <span className="font-medium text-slate-900">
                         {dashboardStats.totalReports.toLocaleString()}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         Reports This Month
                       </span>
-                      <span className="font-medium text-slate-100">234</span>
+                      <span className="font-medium text-slate-900">234</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         Avg. Response Time
                       </span>
-                      <span className="font-medium text-slate-100">2.4 days</span>
+                      <span className="font-medium text-slate-900">2.4 days</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         Resolution Rate
                       </span>
-                      <span className="font-medium text-success">87%</span>
+                      <span className="font-medium text-emerald-600">87%</span>
                     </div>
                   </div>
                 </CardContent>

@@ -5,15 +5,30 @@
 @tailwind utilities;
 
 :root {
-  --background: #1A1A1A;
-  --foreground: #E5E5E5;
-  --surface: #242424;
-  --surface-elevated: #2E2E2E;
-  --border: #404040;
+  /* Light Theme - Clean & Professional */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --surface: #F8FAFC;
+  --surface-elevated: #FFFFFF;
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+  
+  /* Primary - Teal/Cyan accent */
   --primary: #0891B2;
+  --primary-light: #22D3EE;
+  --primary-dark: #0E7490;
+  
+  /* Semantic Colors */
   --accent: #10B981;
   --success: #22C55E;
   --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+  
+  /* Text Colors */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
 }
 
 * {
@@ -35,7 +50,7 @@ a {
   text-decoration: none;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Light theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -51,10 +66,10 @@ a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4B5563;
+  background: #CBD5E1;
 }
 
-/* Leaflet map styles */
+/* Leaflet map styles - Light theme */
 .leaflet-container {
   background: var(--surface) !important;
   border-radius: 8px;
@@ -64,6 +79,7 @@ a {
   background: var(--surface-elevated) !important;
   color: var(--foreground) !important;
   border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
 
 .leaflet-popup-tip {
@@ -89,3 +105,13 @@ a {
   }
 }
 
+/* Light theme specific overrides */
+@layer base {
+  body {
+    @apply bg-white text-slate-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900 font-heading;
+  }
+}

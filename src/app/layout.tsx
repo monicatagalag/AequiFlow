@@ -33,9 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-neutral-900 text-neutral-100 min-h-screen flex flex-col`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-white text-slate-900 min-h-screen flex flex-col`}
       >
         <Navbar />
         <main className="flex-1">{children}</main>
@@ -44,4 +44,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -52,10 +52,10 @@ function TimelineItem({ event, isLast }: { event: TimelineEvent; isLast: boolean
         <div
           className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${
             event.status === "completed"
-              ? "bg-success/20 border-success text-success"
+              ? "bg-emerald-100 border-emerald-500 text-emerald-600"
               : event.status === "current"
-              ? "bg-primary/20 border-primary text-primary animate-pulse-soft"
-              : "bg-surface-elevated border-border text-slate-500"
+              ? "bg-cyan-100 border-cyan-500 text-cyan-600 animate-pulse"
+              : "bg-slate-100 border-slate-300 text-slate-500"
           }`}
         >
           {event.status === "completed" ? (
@@ -82,8 +82,8 @@ function TimelineItem({ event, isLast }: { event: TimelineEvent; isLast: boolean
             day: "numeric",
           })}
         </p>
-        <h4 className="font-medium text-slate-100">{event.title}</h4>
-        <p className="text-sm text-slate-400 mt-1">{event.description}</p>
+        <h4 className="font-medium text-slate-900">{event.title}</h4>
+        <p className="text-sm text-slate-600 mt-1">{event.description}</p>
       </div>
     </div>
   );
@@ -116,8 +116,8 @@ function PhotoCard({ photo }: { photo: ProjectPhoto }) {
         </div>
       </div>
       <CardContent className="p-4">
-        <p className="text-sm text-slate-100 mb-2">{photo.caption}</p>
-        <div className="flex flex-wrap gap-2 text-xs text-slate-400">
+        <p className="text-sm text-slate-900 mb-2">{photo.caption}</p>
+        <div className="flex flex-wrap gap-2 text-xs text-slate-600">
           <span className="flex items-center gap-1">
             <Clock className="w-3 h-3" />
             {photo.timestamp}
@@ -128,10 +128,10 @@ function PhotoCard({ photo }: { photo: ProjectPhoto }) {
           </span>
         </div>
         {/* Validation Bar */}
-        <div className="mt-3 pt-3 border-t border-border">
+        <div className="mt-3 pt-3 border-t border-slate-200">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-slate-400">Community Validation</span>
-            <span className="text-xs font-medium text-slate-100">
+            <span className="text-xs text-slate-600">Community Validation</span>
+            <span className="text-xs font-medium text-slate-900">
               {photo.validationCount} validations
             </span>
           </div>
@@ -140,7 +140,7 @@ function PhotoCard({ photo }: { photo: ProjectPhoto }) {
               <ThumbsUp className="w-3 h-3" />
               Confirm
             </Button>
-            <Button variant="ghost" size="sm" className="flex-1 text-xs text-warning hover:text-warning">
+            <Button variant="ghost" size="sm" className="flex-1 text-xs text-amber-600 hover:text-amber-600">
               <Flag className="w-3 h-3" />
               Flag
             </Button>
@@ -170,12 +170,12 @@ export default function ProjectDetailPage({
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="bg-surface/50 border-b border-border/50">
+      <section className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4 py-8">
           {/* Breadcrumb */}
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-primary transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-cyan-600 transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Projects
@@ -187,10 +187,10 @@ export default function ProjectDetailPage({
                 {getStatusBadge(project.status)}
                 <Badge variant="secondary">{project.region}</Badge>
               </div>
-              <h1 className="font-heading text-2xl md:text-3xl font-bold text-slate-100 mb-3">
+              <h1 className="font-heading text-2xl md:text-3xl font-bold text-slate-900 mb-3">
                 {project.name}
               </h1>
-              <div className="flex items-center gap-2 text-slate-400">
+              <div className="flex items-center gap-2 text-slate-600">
                 <MapPin className="w-4 h-4" />
                 {project.location}
               </div>
@@ -227,15 +227,15 @@ export default function ProjectDetailPage({
                   <CardTitle>Project Overview</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-400 mb-6">{project.description}</p>
+                  <p className="text-slate-600 mb-6">{project.description}</p>
 
                   {/* Progress */}
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-600">
                         Overall Progress
                       </span>
-                      <span className="text-lg font-semibold text-slate-100">
+                      <span className="text-lg font-semibold text-slate-900">
                         {project.progress}%
                       </span>
                     </div>
@@ -254,42 +254,42 @@ export default function ProjectDetailPage({
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="p-4 rounded-lg bg-surface-elevated border border-border">
-                      <div className="flex items-center gap-2 text-slate-400 mb-2">
+                    <div className="p-4 rounded-lg bg-slate-100 border border-slate-200">
+                      <div className="flex items-center gap-2 text-slate-600 mb-2">
                         <Banknote className="w-4 h-4" />
                         <span className="text-xs">Budget</span>
                       </div>
-                      <p className="font-semibold text-slate-100">
+                      <p className="font-semibold text-slate-900">
                         {formatCurrency(project.budget)}
                       </p>
                     </div>
-                    <div className="p-4 rounded-lg bg-surface-elevated border border-border">
-                      <div className="flex items-center gap-2 text-slate-400 mb-2">
+                    <div className="p-4 rounded-lg bg-slate-100 border border-slate-200">
+                      <div className="flex items-center gap-2 text-slate-600 mb-2">
                         <TrendingUp className="w-4 h-4" />
                         <span className="text-xs">Disbursed</span>
                       </div>
-                      <p className="font-semibold text-slate-100">
+                      <p className="font-semibold text-slate-900">
                         {formatCurrency(project.disbursed)} ({disbursedPercentage}%)
                       </p>
                     </div>
-                    <div className="p-4 rounded-lg bg-surface-elevated border border-border">
-                      <div className="flex items-center gap-2 text-slate-400 mb-2">
+                    <div className="p-4 rounded-lg bg-slate-100 border border-slate-200">
+                      <div className="flex items-center gap-2 text-slate-600 mb-2">
                         <Calendar className="w-4 h-4" />
                         <span className="text-xs">Start Date</span>
                       </div>
-                      <p className="font-semibold text-slate-100">
+                      <p className="font-semibold text-slate-900">
                         {new Date(project.startDate).toLocaleDateString("en-PH", {
                           month: "short",
                           year: "numeric",
                         })}
                       </p>
                     </div>
-                    <div className="p-4 rounded-lg bg-surface-elevated border border-border">
-                      <div className="flex items-center gap-2 text-slate-400 mb-2">
+                    <div className="p-4 rounded-lg bg-slate-100 border border-slate-200">
+                      <div className="flex items-center gap-2 text-slate-600 mb-2">
                         <Clock className="w-4 h-4" />
                         <span className="text-xs">Target</span>
                       </div>
-                      <p className="font-semibold text-slate-100">
+                      <p className="font-semibold text-slate-900">
                         {new Date(project.targetDate).toLocaleDateString("en-PH", {
                           month: "short",
                           year: "numeric",
@@ -304,7 +304,7 @@ export default function ProjectDetailPage({
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-primary" />
+                    <Clock className="w-5 h-5 text-cyan-600" />
                     Progress Timeline
                   </CardTitle>
                 </CardHeader>
@@ -325,7 +325,7 @@ export default function ProjectDetailPage({
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Camera className="w-5 h-5 text-primary" />
+                    <Camera className="w-5 h-5 text-cyan-600" />
                     Photo Evidence
                   </CardTitle>
                 </CardHeader>
@@ -345,16 +345,16 @@ export default function ProjectDetailPage({
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-success" />
+                    <Shield className="w-5 h-5 text-emerald-600" />
                     Community Validation
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-center mb-4">
-                    <div className="text-5xl font-heading font-bold text-success mb-1">
+                    <div className="text-5xl font-heading font-bold text-emerald-600 mb-1">
                       {project.validationScore}%
                     </div>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-600">
                       Based on {project.validationCount} validations
                     </p>
                   </div>
@@ -378,17 +378,17 @@ export default function ProjectDetailPage({
                 <CardContent className="space-y-4">
                   <div>
                     <p className="text-xs text-slate-500 mb-1">Contractor</p>
-                    <p className="text-sm text-slate-100">{project.contractor}</p>
+                    <p className="text-sm text-slate-900">{project.contractor}</p>
                   </div>
                   <div>
                     <p className="text-xs text-slate-500 mb-1">
                       Implementing Agency
                     </p>
-                    <p className="text-sm text-slate-100">{project.agency}</p>
+                    <p className="text-sm text-slate-900">{project.agency}</p>
                   </div>
                   <div>
                     <p className="text-xs text-slate-500 mb-1">Location</p>
-                    <p className="text-sm text-slate-100">{project.location}</p>
+                    <p className="text-sm text-slate-900">{project.location}</p>
                     <p className="text-xs text-slate-500">
                       {project.coordinates.lat.toFixed(4)}° N,{" "}
                       {project.coordinates.lng.toFixed(4)}° E
@@ -402,16 +402,16 @@ export default function ProjectDetailPage({
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                      <Bot className="w-5 h-5 text-primary" />
+                      <Bot className="w-5 h-5 text-cyan-600" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-slate-100">
+                      <h4 className="font-medium text-slate-900">
                         AI Validation
                       </h4>
-                      <p className="text-xs text-slate-400">Automated checks</p>
+                      <p className="text-xs text-slate-600">Automated checks</p>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-400">
+                  <p className="text-sm text-slate-600">
                     Photos and progress reports are automatically analyzed for
                     consistency and authenticity using machine learning.
                   </p>
@@ -425,11 +425,11 @@ export default function ProjectDetailPage({
               {/* Report Button */}
               <Card className="border-warning/30 bg-warning/5">
                 <CardContent className="pt-6 text-center">
-                  <AlertTriangle className="w-8 h-8 text-warning mx-auto mb-3" />
-                  <h4 className="font-medium text-slate-100 mb-2">
+                  <AlertTriangle className="w-8 h-8 text-amber-600 mx-auto mb-3" />
+                  <h4 className="font-medium text-slate-900 mb-2">
                     See Something Wrong?
                   </h4>
-                  <p className="text-sm text-slate-400 mb-4">
+                  <p className="text-sm text-slate-600 mb-4">
                     Report issues anonymously. Your identity is protected.
                   </p>
                   <Link href="/report">

@@ -38,8 +38,8 @@ import dynamic from "next/dynamic";
 const ProjectMap = dynamic(() => import("@/components/ProjectMap"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[500px] bg-surface rounded-xl flex items-center justify-center border border-border">
-      <div className="text-slate-400">Loading map...</div>
+    <div className="w-full h-[500px] bg-slate-100 rounded-xl flex items-center justify-center border border-slate-200">
+      <div className="text-slate-500">Loading map...</div>
     </div>
   ),
 });
@@ -58,15 +58,15 @@ function getStatusBadge(status: ProjectStatus) {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.id}`}>
-      <Card className="h-full hover:border-primary/50 transition-all duration-300 cursor-pointer group">
+      <Card className="h-full hover:border-cyan-300 transition-all duration-300 cursor-pointer group">
         <CardContent className="pt-6">
           {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-4">
             <div className="flex-1">
-              <h3 className="font-heading text-lg font-semibold text-slate-100 group-hover:text-primary transition-colors line-clamp-2">
+              <h3 className="font-heading text-lg font-semibold text-slate-900 group-hover:text-cyan-600 transition-colors line-clamp-2">
                 {project.name}
               </h3>
-              <div className="flex items-center gap-2 text-sm text-slate-400 mt-1">
+              <div className="flex items-center gap-2 text-sm text-slate-500 mt-1">
                 <MapPin className="w-4 h-4" />
                 {project.location}
               </div>
@@ -77,8 +77,8 @@ function ProjectCard({ project }: { project: Project }) {
           {/* Progress */}
           <div className="mb-4">
             <div className="flex items-center justify-between text-sm mb-2">
-              <span className="text-slate-400">Progress</span>
-              <span className="font-medium text-slate-100">
+              <span className="text-slate-500">Progress</span>
+              <span className="font-medium text-slate-900">
                 {project.progress}%
               </span>
             </div>
@@ -86,30 +86,30 @@ function ProjectCard({ project }: { project: Project }) {
               value={project.progress}
               indicatorClassName={
                 project.status === "delayed"
-                  ? "bg-warning"
+                  ? "bg-amber-500"
                   : project.status === "completed"
-                  ? "bg-success"
-                  : "bg-primary"
+                  ? "bg-emerald-500"
+                  : "bg-cyan-600"
               }
             />
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
             <div className="flex items-center gap-2">
-              <Banknote className="w-4 h-4 text-slate-500" />
+              <Banknote className="w-4 h-4 text-slate-400" />
               <div>
-                <p className="text-xs text-slate-500">Budget</p>
-                <p className="text-sm font-medium text-slate-100">
+                <p className="text-xs text-slate-400">Budget</p>
+                <p className="text-sm font-medium text-slate-900">
                   {formatCurrency(project.budget)}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-slate-500" />
+              <Users className="w-4 h-4 text-slate-400" />
               <div>
-                <p className="text-xs text-slate-500">Validation</p>
-                <p className="text-sm font-medium text-slate-100">
+                <p className="text-xs text-slate-400">Validation</p>
+                <p className="text-sm font-medium text-slate-900">
                   {project.validationScore}%
                 </p>
               </div>
@@ -117,7 +117,7 @@ function ProjectCard({ project }: { project: Project }) {
           </div>
 
           {/* View Details */}
-          <div className="flex items-center justify-end mt-4 text-sm text-primary group-hover:gap-2 transition-all">
+          <div className="flex items-center justify-end mt-4 text-sm text-cyan-600 group-hover:gap-2 transition-all">
             <span>View Details</span>
             <ChevronRight className="w-4 h-4" />
           </div>
@@ -149,19 +149,19 @@ export default function ProjectsPage() {
   const regions = [...new Set(projects.map((p) => p.region))];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-surface/50 border-b border-border/50">
+      <section className="bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-4 py-12">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Building2 className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center">
+              <Building2 className="w-5 h-5 text-cyan-600" />
             </div>
-            <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-100">
+            <h1 className="font-heading text-3xl md:text-4xl font-bold text-slate-900">
               Project Tracker
             </h1>
           </div>
-          <p className="text-slate-400 max-w-2xl">
+          <p className="text-slate-600 max-w-2xl">
             Monitor public infrastructure projects across the Philippines.
             Filter by location, status, and view on map or as a list.
           </p>
@@ -169,13 +169,13 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filters & Controls */}
-      <section className="border-b border-border/50 bg-background sticky top-16 z-40">
+      <section className="border-b border-slate-200 bg-white sticky top-16 z-40">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
             {/* Search & Filters */}
             <div className="flex flex-col sm:flex-row gap-3 flex-1 w-full lg:w-auto">
               <div className="relative flex-1 sm:max-w-xs">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <Input
                   placeholder="Search projects..."
                   value={searchQuery}
@@ -212,7 +212,7 @@ export default function ProjectsPage() {
             </div>
 
             {/* View Toggle */}
-            <div className="flex items-center gap-2 bg-surface rounded-lg p-1 border border-border">
+            <div className="flex items-center gap-2 bg-slate-100 rounded-lg p-1 border border-slate-200">
               <Button
                 variant={viewMode === "map" ? "default" : "ghost"}
                 size="sm"
@@ -235,7 +235,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Results Count */}
-          <div className="mt-4 flex items-center gap-2 text-sm text-slate-400">
+          <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
             <Filter className="w-4 h-4" />
             <span>
               Showing {filteredProjects.length} of {projects.length} projects
@@ -256,7 +256,7 @@ export default function ProjectsPage() {
 
               {/* Project List Sidebar */}
               <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
-                <h3 className="font-heading text-lg font-semibold text-slate-100 sticky top-0 bg-background py-2">
+                <h3 className="font-heading text-lg font-semibold text-slate-900 sticky top-0 bg-white py-2">
                   Projects ({filteredProjects.length})
                 </h3>
                 {filteredProjects.map((project) => (
@@ -265,14 +265,14 @@ export default function ProjectsPage() {
                     href={`/projects/${project.id}`}
                     className="block"
                   >
-                    <Card className="hover:border-primary/50 transition-all cursor-pointer">
+                    <Card className="hover:border-cyan-300 transition-all cursor-pointer">
                       <CardContent className="p-4">
                         <div className="flex items-start justify-between gap-2">
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-medium text-slate-100 text-sm truncate">
+                            <h4 className="font-medium text-slate-900 text-sm truncate">
                               {project.name}
                             </h4>
-                            <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
                               <MapPin className="w-3 h-3" />
                               {project.location}
                             </p>
@@ -284,10 +284,10 @@ export default function ProjectsPage() {
                           className="mt-3 h-1"
                           indicatorClassName={
                             project.status === "delayed"
-                              ? "bg-warning"
+                              ? "bg-amber-500"
                               : project.status === "completed"
-                              ? "bg-success"
-                              : "bg-primary"
+                              ? "bg-emerald-500"
+                              : "bg-cyan-600"
                           }
                         />
                       </CardContent>
@@ -307,11 +307,11 @@ export default function ProjectsPage() {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
-              <Building2 className="w-12 h-12 text-slate-600 mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-semibold text-slate-100 mb-2">
+              <Building2 className="w-12 h-12 text-slate-400 mx-auto mb-4" />
+              <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
                 No projects found
               </h3>
-              <p className="text-slate-400">
+              <p className="text-slate-500">
                 Try adjusting your filters or search query.
               </p>
             </div>
@@ -321,4 +321,3 @@ export default function ProjectsPage() {
     </div>
   );
 }
-

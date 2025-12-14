@@ -19,9 +19,9 @@ import {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-surface/50 border-b border-border/50">
+      <section className="relative overflow-hidden bg-slate-50 border-b border-slate-200">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
           <div className="max-w-3xl">
@@ -29,13 +29,13 @@ export default function AboutPage() {
               <Heart className="w-3 h-3 mr-1" />
               Built for the Philippines
             </Badge>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-100 mb-6">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mb-6">
               Building Trust Through{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
                 Transparency
               </span>
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed">
               AequiFlow is a civic technology platform designed to bridge the gap
               between citizens and public infrastructure projects. We believe that
               transparency is the foundation of trust, and trust is the foundation
@@ -51,22 +51,22 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Target className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium text-primary uppercase tracking-wider">
+                <Target className="w-5 h-5 text-cyan-600" />
+                <span className="text-sm font-medium text-cyan-600 uppercase tracking-wider">
                   Our Mission
                 </span>
               </div>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-100 mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 Empowering Citizens, Strengthening Governance
               </h2>
-              <p className="text-slate-400 leading-relaxed mb-6">
+              <p className="text-slate-600 leading-relaxed mb-6">
                 AequiFlow exists to transform how Filipinos interact with public
                 infrastructure development. By providing accessible, real-time
                 information and secure reporting mechanisms, we enable citizens
                 to participate meaningfully in ensuring that public projects
                 deliver on their promises.
               </p>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 Our platform serves as a bridge between local government units and
                 the communities they serve, fostering collaboration and mutual
                 accountability in the pursuit of better infrastructure for all.
@@ -75,10 +75,10 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-4">
               <Card className="text-center">
                 <CardContent className="pt-6">
-                  <div className="text-3xl font-heading font-bold text-primary mb-2">
+                  <div className="text-3xl font-heading font-bold text-cyan-600 mb-2">
                     247
                   </div>
-                  <p className="text-sm text-slate-400">Projects Tracked</p>
+                  <p className="text-sm text-slate-600">Projects Tracked</p>
                 </CardContent>
               </Card>
               <Card className="text-center">
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   <div className="text-3xl font-heading font-bold text-success mb-2">
                     45.8B
                   </div>
-                  <p className="text-sm text-slate-400">Pesos Monitored</p>
+                  <p className="text-sm text-slate-600">Pesos Monitored</p>
                 </CardContent>
               </Card>
               <Card className="text-center">
@@ -94,15 +94,15 @@ export default function AboutPage() {
                   <div className="text-3xl font-heading font-bold text-warning mb-2">
                     1,834
                   </div>
-                  <p className="text-sm text-slate-400">Reports Filed</p>
+                  <p className="text-sm text-slate-600">Reports Filed</p>
                 </CardContent>
               </Card>
               <Card className="text-center">
                 <CardContent className="pt-6">
-                  <div className="text-3xl font-heading font-bold text-slate-100 mb-2">
+                  <div className="text-3xl font-heading font-bold text-slate-900 mb-2">
                     84%
                   </div>
-                  <p className="text-sm text-slate-400">Trust Score</p>
+                  <p className="text-sm text-slate-600">Trust Score</p>
                 </CardContent>
               </Card>
             </div>
@@ -111,13 +111,13 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 bg-surface/50 border-y border-border/50">
+      <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-100 mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Our Core Values
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Every feature we build and every decision we make is guided by
               these principles.
             </p>
@@ -126,13 +126,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="text-center">
               <CardContent className="pt-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Eye className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center mx-auto mb-4">
+                  <Eye className="w-7 h-7 text-cyan-600" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-slate-100 mb-2">
+                <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
                   Transparency
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-600">
                   Open access to project information, budgets, and progress. No
                   hidden agendas, just clear facts.
                 </p>
@@ -144,10 +144,10 @@ export default function AboutPage() {
                 <div className="w-14 h-14 rounded-2xl bg-success/10 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-7 h-7 text-success" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-slate-100 mb-2">
+                <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
                   Privacy
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-600">
                   Anonymous reporting with no personal data collection. Your
                   identity is protected by design.
                 </p>
@@ -159,10 +159,10 @@ export default function AboutPage() {
                 <div className="w-14 h-14 rounded-2xl bg-warning/10 flex items-center justify-center mx-auto mb-4">
                   <Handshake className="w-7 h-7 text-warning" />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-slate-100 mb-2">
+                <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
                   Collaboration
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-600">
                   Building bridges between citizens and government for mutual
                   benefit and shared progress.
                 </p>
@@ -177,15 +177,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Globe className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              <Globe className="w-5 h-5 text-cyan-600" />
+              <span className="text-sm font-medium text-cyan-600 uppercase tracking-wider">
                 Global Impact
               </span>
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-100 mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               UN Sustainable Development Goals Alignment
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               AequiFlow directly contributes to the United Nations Sustainable
               Development Goals, supporting global efforts for sustainable and
               equitable development.
@@ -201,31 +201,31 @@ export default function AboutPage() {
                     <Building2 className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30 mb-2">
+                    <Badge className="bg-orange-500/20 text-orange-700 border-orange-500/30 mb-2">
                       SDG 9
                     </Badge>
-                    <h3 className="font-heading text-xl font-semibold text-slate-100 mb-2">
+                    <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
                       Industry, Innovation & Infrastructure
                     </h3>
-                    <p className="text-sm text-slate-400 mb-4">
+                    <p className="text-sm text-slate-600 mb-4">
                       Build resilient infrastructure, promote inclusive and
                       sustainable industrialization and foster innovation.
                     </p>
                     <div className="space-y-2">
-                      <div className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-orange-400 mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
                         <span>
                           Monitoring quality and progress of infrastructure projects
                         </span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-orange-400 mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
                         <span>
                           Ensuring efficient use of public infrastructure budgets
                         </span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-orange-400 mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
                         <span>
                           Promoting community participation in development
                         </span>
@@ -244,31 +244,31 @@ export default function AboutPage() {
                     <Scale className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 mb-2">
+                    <Badge className="bg-blue-500/20 text-blue-700 border-blue-500/30 mb-2">
                       SDG 16
                     </Badge>
-                    <h3 className="font-heading text-xl font-semibold text-slate-100 mb-2">
+                    <h3 className="font-heading text-xl font-semibold text-slate-900 mb-2">
                       Peace, Justice & Strong Institutions
                     </h3>
-                    <p className="text-sm text-slate-400 mb-4">
+                    <p className="text-sm text-slate-600 mb-4">
                       Promote peaceful and inclusive societies, provide access to
                       justice and build effective institutions.
                     </p>
                     <div className="space-y-2">
-                      <div className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                         <span>
                           Promoting transparency in public fund usage
                         </span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                         <span>
                           Enabling anonymous reporting of irregularities
                         </span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                      <div className="flex items-start gap-2 text-sm text-slate-600">
+                        <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                         <span>
                           Building accountable and inclusive institutions
                         </span>
@@ -283,20 +283,20 @@ export default function AboutPage() {
       </section>
 
       {/* Why AequiFlow Exists */}
-      <section className="py-16 bg-surface/50 border-y border-border/50">
+      <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-2 mb-4">
-              <Lightbulb className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              <Lightbulb className="w-5 h-5 text-cyan-600" />
+              <span className="text-sm font-medium text-cyan-600 uppercase tracking-wider">
                 Why We Exist
               </span>
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-100 mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-6">
               The Challenge We&apos;re Addressing
             </h2>
 
-            <div className="space-y-6 text-slate-400 leading-relaxed">
+            <div className="space-y-6 text-slate-600 leading-relaxed">
               <p>
                 Public infrastructure is the backbone of national development.
                 Roads, bridges, water systems, and public facilities determine
@@ -322,11 +322,11 @@ export default function AboutPage() {
 
             {/* Quote */}
             <blockquote className="mt-8 pl-6 border-l-4 border-primary">
-              <p className="text-lg text-slate-100 italic mb-2">
+              <p className="text-lg text-slate-900 italic mb-2">
                 &quot;When citizens can see exactly where their taxes go and participate
                 in ensuring accountability, trust naturally follows.&quot;
               </p>
-              <cite className="text-sm text-slate-400">
+              <cite className="text-sm text-slate-600">
                 — AequiFlow Founding Principle
               </cite>
             </blockquote>
@@ -338,10 +338,10 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-3xl font-bold text-slate-100 mb-4">
+            <h2 className="font-heading text-3xl font-bold text-slate-900 mb-4">
               Join the Movement
             </h2>
-            <p className="text-slate-400 mb-8">
+            <p className="text-slate-600 mb-8">
               Be part of building a more transparent and accountable Philippines.
               Start tracking projects, reporting issues, or validating progress
               today.

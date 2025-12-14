@@ -529,7 +529,7 @@ export const validationItems: ValidationItem[] = [
     description:
       "Pump station installation progress - validate if this matches expected progress",
     photoUrl:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800",
+      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
     timestamp: "2024-11-28 14:30:00",
     location: "Novaliches, Quezon City",
     confirmCount: 45,
@@ -543,7 +543,7 @@ export const validationItems: ValidationItem[] = [
     description:
       "West wing renovation reported at 78% completion - verify if accurate",
     photoUrl:
-      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800",
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80",
     timestamp: "2024-11-27 10:15:00",
     location: "Baguio City Public Market",
     confirmCount: 89,
@@ -557,7 +557,7 @@ export const validationItems: ValidationItem[] = [
     description:
       "New pier construction photos submitted - validate construction quality",
     photoUrl:
-      "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
     timestamp: "2024-11-26 09:45:00",
     location: "Iloilo City",
     confirmCount: 67,
@@ -571,7 +571,7 @@ export const validationItems: ValidationItem[] = [
     description:
       "Mango Avenue section reported as resumed work - needs community verification",
     photoUrl:
-      "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800",
+      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
     timestamp: "2024-11-29 16:00:00",
     location: "Mango Avenue, Cebu City",
     confirmCount: 23,

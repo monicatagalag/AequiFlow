@@ -4,22 +4,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25",
+          "bg-cyan-600 text-white hover:bg-cyan-700 shadow-lg shadow-cyan-600/25",
         secondary:
-          "bg-neutral-800 text-neutral-100 border border-neutral-700 hover:bg-neutral-700",
+          "bg-slate-100 text-slate-900 border border-slate-200 hover:bg-slate-200",
         success:
-          "bg-success text-white hover:bg-success/90 shadow-lg shadow-success/25",
+          "bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-600/25",
         warning:
-          "bg-warning text-white hover:bg-warning/90 shadow-lg shadow-warning/25",
-        ghost: "hover:bg-neutral-800 text-neutral-300 hover:text-white",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-amber-500 text-white hover:bg-amber-600 shadow-lg shadow-amber-500/25",
+        ghost: "hover:bg-slate-100 text-slate-600 hover:text-slate-900",
+        link: "text-cyan-600 underline-offset-4 hover:underline",
         outline:
-          "border border-neutral-600 text-neutral-100 hover:bg-neutral-800 hover:border-neutral-500",
+          "border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400",
       },
       size: {
         default: "h-11 px-6 py-2",
@@ -56,4 +56,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
-
