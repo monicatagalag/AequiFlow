@@ -28,6 +28,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-cyan-50/30" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-100/40 via-transparent to-transparent" />
         
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-emerald-500/5 to-cyan-500/5 animate-gradient" />
+        
         {/* Subtle Grid Pattern */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -37,94 +40,128 @@ export default function HomePage() {
           }}
         />
 
-        <div className="container mx-auto px-4 py-16 md:py-24 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div>
-              {/* Logo */}
-              <div className="flex items-center gap-4 mb-8">
-                <Image
-                  src="/aequiflowlogo.png"
-                  alt="AequiFlow Logo"
-                  width={60}
-                  height={60}
-                  className="rounded-xl"
-                />
-              </div>
+        {/* Floating Orbs - Background Effects */}
+        <div className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-gradient-to-br from-cyan-200/40 to-transparent blur-3xl animate-float-slow" />
+        <div className="absolute bottom-20 right-[15%] w-80 h-80 rounded-full bg-gradient-to-br from-emerald-200/30 to-transparent blur-3xl animate-float-reverse" />
+        <div className="absolute top-1/3 right-[5%] w-40 h-40 rounded-full bg-gradient-to-br from-amber-200/20 to-transparent blur-2xl animate-float" />
+        
+        {/* Floating Geometric Shapes */}
+        <div className="hidden md:block absolute top-32 left-[15%] w-4 h-4 rounded-full bg-cyan-400/60 animate-float" style={{ animationDelay: '0s' }} />
+        <div className="hidden md:block absolute top-48 right-[20%] w-3 h-3 rounded-full bg-emerald-400/60 animate-float-reverse" style={{ animationDelay: '1s' }} />
+        <div className="hidden md:block absolute bottom-32 left-[25%] w-5 h-5 rounded-full bg-amber-400/50 animate-float" style={{ animationDelay: '2s' }} />
+        <div className="hidden lg:block absolute top-40 left-[40%] w-2 h-2 rounded-full bg-cyan-500/70 animate-float-slow" style={{ animationDelay: '0.5s' }} />
+        <div className="hidden lg:block absolute bottom-48 right-[30%] w-3 h-3 rounded-full bg-emerald-500/60 animate-float" style={{ animationDelay: '1.5s' }} />
+        
+        {/* Decorative Rings */}
+        <div className="hidden lg:block absolute top-1/4 left-[8%] w-20 h-20 rounded-full border border-cyan-200/40 animate-spin-slow" />
+        <div className="hidden lg:block absolute bottom-1/4 right-[10%] w-16 h-16 rounded-full border border-emerald-200/30 animate-spin-slow" style={{ animationDirection: 'reverse' }} />
 
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left Content */}
+            <div className="order-2 lg:order-1 text-center lg:text-left">
               {/* Tagline */}
-              <p className="text-lg md:text-xl text-slate-500 mb-4 animate-fade-in">
+              <p className="text-base sm:text-lg md:text-xl text-slate-500 mb-3 sm:mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                 See the Progress. Trust the Process.
               </p>
 
               {/* Headline */}
-              <h1 className="font-heading text-5xl md:text-7xl font-bold text-slate-900 mb-6 animate-slide-up">
-                AequiFlow
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <span className="inline-block bg-gradient-to-r from-cyan-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Aequi</span>
+                <span className="inline-block bg-gradient-to-r from-cyan-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Flow</span>
               </h1>
 
               {/* Description */}
-              <p className="text-lg text-slate-600 max-w-xl mb-8 animate-slide-up animate-delay-100">
+              <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 Track public infrastructure projects in real-time. Report issues
                 anonymously. Validate progress with your community.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animate-delay-200">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 <Link href="/projects">
-                  <Button size="lg" className="w-full sm:w-auto">
-                    <Eye className="w-5 h-5" />
-                    View Projects
-                    <ChevronRight className="w-4 h-4" />
+                  <Button size="lg" className="w-full sm:w-auto group relative overflow-hidden">
+                    <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative flex items-center gap-2">
+                      <Eye className="w-5 h-5" />
+                      View Projects
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </Button>
                 </Link>
                 <Link href="/report">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                    <AlertTriangle className="w-5 h-5" />
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto group hover:border-cyan-400 hover:bg-cyan-50/50 transition-all duration-300">
+                    <AlertTriangle className="w-5 h-5 group-hover:text-amber-500 transition-colors" />
                     Report an Issue
                   </Button>
                 </Link>
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-8 text-xs text-slate-500">
-                <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">
+              <div className="flex flex-wrap gap-2 mt-6 sm:mt-8 text-xs text-slate-500 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                <span className="px-3 py-1 rounded-full bg-slate-100/80 border border-slate-200 hover:bg-cyan-50 hover:border-cyan-200 hover:text-cyan-700 transition-all duration-300 cursor-default backdrop-blur-sm">
                   CivicTech
                 </span>
-                <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">
+                <span className="px-3 py-1 rounded-full bg-slate-100/80 border border-slate-200 hover:bg-emerald-50 hover:border-emerald-200 hover:text-emerald-700 transition-all duration-300 cursor-default backdrop-blur-sm">
                   GovTech
                 </span>
-                <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">
+                <span className="px-3 py-1 rounded-full bg-slate-100/80 border border-slate-200 hover:bg-amber-50 hover:border-amber-200 hover:text-amber-700 transition-all duration-300 cursor-default backdrop-blur-sm">
                   Transparency & Accountability
                 </span>
               </div>
             </div>
 
-            {/* Right Content - Infrastructure Image */}
-            <div className="hidden lg:block relative">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl shadow-slate-200/50">
-                <Image
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-                  alt="Public Infrastructure Projects"
-                  width={600}
-                  height={700}
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
+            {/* Right Content - Logo with accent */}
+            <div className="order-1 lg:order-2 flex items-center justify-center relative py-10 sm:py-14 lg:py-2">
+              {/* Orbiting elements */}
+              <div className="absolute w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[440px] md:h-[440px] lg:w-[500px] lg:h-[500px]">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full animate-orbit">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 shadow-lg shadow-cyan-400/50" />
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] animate-orbit-reverse">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-400/50" />
+                </div>
               </div>
-              {/* Floating arrow */}
+              
+              {/* Decorative blob - morphing animation */}
+              <div className="absolute w-[240px] h-[170px] sm:w-[320px] sm:h-[220px] md:w-[380px] md:h-[260px] lg:w-[440px] lg:h-[300px] bg-gradient-to-br from-cyan-100/70 via-white to-emerald-50/70 shadow-2xl shadow-cyan-100/60 border border-cyan-100/50 animate-morph" />
+              
+              {/* Secondary glow effect */}
+              <div className="absolute w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full bg-gradient-to-br from-cyan-200/30 via-transparent to-emerald-200/30 blur-xl animate-pulse-glow" />
+              
+              {/* Logo Image with hover effect */}
+              <div className="relative group animate-scale-in">
+                <Image
+                  src="/aequiflowlogo.png"
+                  alt="AequiFlow Logo"
+                  width={260}
+                  height={260}
+                  className="relative drop-shadow-2xl w-[170px] h-[170px] sm:w-[210px] sm:h-[210px] md:w-[260px] md:h-[260px] lg:w-[320px] lg:h-[320px] transition-transform duration-500 group-hover:scale-105 animate-float"
+                  style={{ animationDuration: '4s' }}
+                />
+                {/* Shimmer effect on hover */}
+                <div className="absolute inset-0 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-shimmer" />
+                </div>
+              </div>
+              
+              {/* Floating arrow - hidden on mobile */}
               <button
                 onClick={() => {
                   const nextSection = document.getElementById("what-aequiflow-does");
                   nextSection?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-cyan-600 transition-colors cursor-pointer rounded-full hover:bg-slate-100"
+                className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center text-slate-400 hover:text-cyan-600 transition-all duration-300 cursor-pointer rounded-full hover:bg-slate-100 hover:scale-110 group"
                 aria-label="Scroll to next section"
               >
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>
           </div>
         </div>
+
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* What AequiFlow Does */}
